@@ -14,6 +14,7 @@ describe("<App/>", () => {
   //   /* Usando Regex */
   //   expect(screen.getByText(/React/i)).toBeDefined();
   //   /* expect(screen.getByText(/Angular/i)).toBeDefined(); */
+
   //   expect(screen.getByText("List Elelemt")).toBeDefined();
   //   /* expect(screen.getByText("No Esta")).toBeDefined(); */
   // });

@@ -1,6 +1,7 @@
 import "./App.css";
 import { Item } from "./components/Item";
 import { UseItems } from "./hooks/useItems";
+import { useSEO } from "./hooks/useSEO";
 
 export type ItemId = `${string}-${string}-${string}-${string}-${string}`;
 
@@ -24,7 +25,13 @@ export interface Item {
 ]; */
 
 function App() {
+  /* Import functions from Item */
   const { items, addItem, removeItem } = UseItems();
+  /* Use useSEO to render browser page title  */
+  useSEO({
+    title: `[${items.length}] Prueba tecnica de React`,
+    description: "Añadir e eliminar elementos de una lista",
+  });
 
   const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
