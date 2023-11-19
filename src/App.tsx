@@ -9,7 +9,7 @@ interface Item {
   text: string;
 }
 
-const INITIAL_ITEMS: Item[] = [
+/* const INITIAL_ITEMS: Item[] = [
   {
     id: crypto.randomUUID(),
     timestamp: Date.now(),
@@ -20,10 +20,10 @@ const INITIAL_ITEMS: Item[] = [
     timestamp: Date.now(),
     text: "Libros 📚",
   },
-];
+]; */
 
 function App() {
-  const [items, setItems] = useState(INITIAL_ITEMS);
+  const [items, setItems] = useState<Item[]>([]);
 
   const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
@@ -58,7 +58,11 @@ function App() {
       <aside>
         <h1>Prueba Tecnica de React</h1>
         <h2>Añadir e eliminar</h2>
-        <form action="" onSubmit={handleSubmit}>
+        <form
+          action=""
+          onSubmit={handleSubmit}
+          aria-label="Add elements to the list"
+        >
           <label htmlFor="">
             Elemento a introducir
             <input
